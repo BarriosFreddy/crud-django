@@ -1,0 +1,5 @@
+Integrantes
+Freddy Barrios
+Luis Castro
+
+https://github.com/BarriosFreddy/crud-django

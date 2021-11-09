@@ -1,0 +1,43 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Contact Records</title>  
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >  
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>  
+</head>  
+<body>  
+<table class="table">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>ID</th>  
+        <th>Name</th>  
+        <th>Last name</th>
+        <th>Email</th>  
+        <th>Phone number</th>  
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for contact in contacts %}  
+    <tr>  
+        <td>{{ contact.eid }}</td>  
+        <td>{{ contact.ename }}</td>  
+        <td>{{ contact.elastname }}</td>  
+        <td>{{ contact.eemail }}</td>  
+        <td>{{ contact.ephonenumber }}</td>  
+        <td>  
+            <a href="/edit/{{ contact.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/delete/{{ contact.id }}">Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="/contact" class="btn btn-primary">Add New Record</a></center>  
+</body>  
+</html>  
